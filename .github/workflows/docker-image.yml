@@ -14,4 +14,4 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Run the Docker image
-        run: docker run -p 3333:3333 kajohn/nodeupload
+        run: docker run -p 3333:3333 -d kajohn/nodeupload
