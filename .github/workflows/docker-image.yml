@@ -8,4 +8,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build the Docker image
-        run: docker-compose up --force-recreate --build --detach
+        run: docker build -t kajohn/nodeupload .
+  deploy:    
+    needs: [build]   
+    runs-on: self-hosted
+    steps:
+      - name: Run the Docker image
+        run: docker run \
+                    -p 3333:3333 \
+                    -v /home/kajohn/node-express-multer-image-upload/uploads:/app/uploads \
+                    kajohn/nodeupload
