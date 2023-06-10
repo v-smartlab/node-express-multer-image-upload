@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - name: Build the Docker image
-        run: docker build -t kajohn/nodeupload .
+        run: docker build -t kajohn/nodeupload . --force-recreate --build --detach
   deploy:    
     needs: [build]   
     runs-on: self-hosted
