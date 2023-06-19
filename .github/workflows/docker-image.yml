@@ -17,3 +17,10 @@ jobs:
     steps:
       - name: Run the Docker image
         run: docker run -p 3333:3333 -d --rm --name kajohn-test -v /home/kajohn/node-express-multer-image-upload/uploads:/app/uploads kajohn/nodeupload
+  test:    
+    needs: [build]   
+    runs-on: self-hosted
+    steps:
+      - name: Run the Docker image
+        run: docker exec -i -t kajohn-test /bin/bash
+        
