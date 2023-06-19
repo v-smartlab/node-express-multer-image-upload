@@ -22,5 +22,5 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Run the Docker image
-        run: docker exec -i -t kajohn-test /bin/bash
+        run: docker exec -i -t weblogic12c /bin/bash
         
