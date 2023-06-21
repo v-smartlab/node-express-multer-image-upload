@@ -22,4 +22,4 @@ jobs:
     runs-on: self-hosted
     steps:
       - name: Run the Docker image
-        run: docker exec weblogic12c bash -c "source /u01/oracle/weblogic/wlserver/server/bin/setWLSEnv.sh ; java weblogic.Deployer -adminurl t3://localhost:7001 -user weblogic -password welcome1 -deploy -name LoginWebApp-1 -source /u01/oracle/weblogic/user_projects/domains/base_domain/servers/AdminServer/upload/LoginWebApp-1.war"      
+        run: docker exec weblogic12c bash -c "source /u01/oracle/weblogic/wlserver/server/bin/setWLSEnv.sh ; java weblogic.Deployer -adminurl t3://localhost:7001 -user weblogic -password welcome1 -listapps"
